@@ -31,6 +31,7 @@ void *cattle(void *arg)
              pthread_mutex_unlock(&mutex);//加锁之后要在任意有可能退出线程的地方进行解锁。
              pthread_exit(NULL);//退出线程
          }
+         sleep(1);//给时间片一个缓冲的时间，让其他黄牛也可以抢到票
     }
     return NULL;
 }
